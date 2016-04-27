@@ -11,7 +11,7 @@ RSpec.describe PaymentsController, type: :controller do
 
   describe '#show' do
     let(:loan) { Loan.create!(funded_amount: 100.0) }
-    let (:payment_1) { Payment.create!(date: Date.today, amount: 15, loan: loan) }
+    let(:payment_1) { Payment.create!(date: Date.today, amount: 15, loan: loan) }
 
     it 'responds with a 200' do
       get :show, id: payment_1.id
