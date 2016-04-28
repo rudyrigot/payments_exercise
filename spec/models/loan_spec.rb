@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Loan, type: :model do
-  describe "outstanding_amount" do
+  describe "outstanding_balance" do
 
     let(:loan) {
       loan = Loan.create!(funded_amount: 100.0)
@@ -12,7 +12,7 @@ RSpec.describe Loan, type: :model do
     }
 
     it "returns the proper amount" do
-      expect(loan.outstanding_amount).to eq 75.0
+      expect(loan.outstanding_balance).to eq 75.0
     end
   end
 end

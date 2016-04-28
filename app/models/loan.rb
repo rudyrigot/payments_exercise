@@ -3,7 +3,7 @@ class Loan < ActiveRecord::Base
 
   validates :funded_amount, presence: true
 
-  def outstanding_amount
+  def outstanding_balance
     funded_amount - Payment.where(loan: self).sum(:amount)
   end
 end

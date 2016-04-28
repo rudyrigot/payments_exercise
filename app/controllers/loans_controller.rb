@@ -5,10 +5,10 @@ class LoansController < ApplicationController
   end
 
   def index
-    render json: Loan.all, methods: :outstanding_amount
+    render json: Loan.all, methods: :outstanding_balance
   end
 
   def show
-    render json: Loan.find(params[:id]), methods: :outstanding_amount
+    render json: Loan.find(params[:id]), methods: :outstanding_balance
   end
 end
