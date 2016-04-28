@@ -11,4 +11,8 @@ class LoansController < ApplicationController
   def show
     render json: Loan.find(params[:id]), methods: :outstanding_balance
   end
+
+  def payments
+    render json: Loan.includes(:payments).find(params[:id]).payments
+  end
 end

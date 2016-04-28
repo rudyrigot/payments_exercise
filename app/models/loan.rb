@@ -1,5 +1,5 @@
 class Loan < ActiveRecord::Base
-  has_many :payments, dependent: :destroy
+  has_many :payments, -> { order(:date) }, dependent: :destroy
 
   validates :funded_amount, presence: true
 
